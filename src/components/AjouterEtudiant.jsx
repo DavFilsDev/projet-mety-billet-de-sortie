@@ -1,45 +1,56 @@
-import React, { useState, useEffect } from 'react';
-import { db } from '../config/firebase-config';
-import { collection, addDoc, onSnapshot, query, orderBy } from 'firebase/firestore';
-import '../styles/AjouterEtudiant.css';
-import { NavLink } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { db } from "../config/firebase-config";
+import {
+  collection,
+  addDoc,
+  onSnapshot,
+  query,
+  orderBy,
+} from "firebase/firestore";
+import "../styles/AjouterEtudiant.css";
+import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function AjouterEtudiant() {
-  const [identifiant, setIdentifiant] = useState('');
-  const [nomEleve, setNomEleve] = useState('');
-  const [email, setEmail] = useState('');
-  const [tel, setTel] = useState('');
+  const [identifiant, setIdentifiant] = useState("");
+  const [nomEleve, setNomEleve] = useState("");
+  const [email, setEmail] = useState("");
+  const [tel, setTel] = useState("");
   const [showForm, setShowForm] = useState(true);
   const [students, setStudents] = useState([]);
+  const { t } = useTranslation(); // Hook pour utiliser les traductions
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       // Ajoutez le nouvel étudiant avec l'Identifiant manuel
-      await addDoc(collection(db, 'EtudiantTab'), {
-        identifiant,  // Stocke l'identifiant manuellement saisi
+      await addDoc(collection(db, "EtudiantTab"), {
+        identifiant, // Stocke l'identifiant manuellement saisi
         email,
         nomEleve,
         tel,
       });
 
       // Réinitialisez le formulaire
-      setIdentifiant('');
-      setNomEleve('');
-      setEmail('');
-      setTel('');
+      setIdentifiant("");
+      setNomEleve("");
+      setEmail("");
+      setTel("");
 
-      alert('Étudiant ajouté avec succès !');
+      alert("Étudiant ajouté avec succès !");
     } catch (error) {
-      console.error('Erreur lors de l\'ajout de l\'étudiant :', error);
-      alert('Erreur lors de l\'ajout de l\'étudiant.');
+      console.error("Erreur lors de l'ajout de l'étudiant :", error);
+      alert("Erreur lors de l'ajout de l'étudiant.");
     }
   };
 
   useEffect(() => {
     // Observer les changements dans la collection EtudiantTab
-    const q = query(collection(db, 'EtudiantTab'), orderBy('identifiant', 'asc'));
+    const q = query(
+      collection(db, "EtudiantTab"),
+      orderBy("identifiant", "asc")
+    );
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const studentsList = [];
       querySnapshot.forEach((doc) => {
@@ -134,7 +145,12 @@ function AjouterEtudiant() {
             </div>
           </>
         )}
-        <button className='butt' onClick={toggleForm}>{showForm ? 'Afficher les élèves' : 'Ajouter étudiant'}</button>
+
+        <button onClick={toggleForm}>
+          {showForm ? "Afficher les élèves" : "Ajouter étudiant"}
+        </button>
+      </div>
+
     </>
   );
 }

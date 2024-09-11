@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
-import '../styles/EnvoyerBilletDeSortie.css';
-import { NavLink } from 'react-router-dom';
+import React, { useState } from "react";
+import "../styles/EnvoyerBilletDeSortie.css";
+import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function EnvoyerBilletDeSortie() {
-  const [reason, setReason] = useState('');
-  const [otherReason, setOtherReason] = useState('');
+  const [reason, setReason] = useState("");
+  const [otherReason, setOtherReason] = useState("");
+
+  const { t } = useTranslation(); // Hook pour les traductions
 
   const handleReasonChange = (e) => {
     setReason(e.target.value);
-    if (e.target.value !== 'other') {
-      setOtherReason('');
+    if (e.target.value !== "other") {
+      setOtherReason("");
     }
   };
 
@@ -20,10 +23,10 @@ function EnvoyerBilletDeSortie() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const sortieData = {
-      reason: reason === 'other' ? otherReason : reason,
+      reason: reason === "other" ? otherReason : reason,
       // Ajouter les autres champs ici (lieu, date, heure, etc.)
     };
-    console.log('Billet de sortie envoyé :', sortieData);
+    console.log("Billet de sortie envoyé :", sortieData);
   };
 
   return (
@@ -65,7 +68,7 @@ function EnvoyerBilletDeSortie() {
             </select>
           </div>
 
-          {reason === 'other' && (
+          {reason === "other" && (
             <div className="form-group">
               <label htmlFor="otherReason">Veuillez préciser :</label>
               <input

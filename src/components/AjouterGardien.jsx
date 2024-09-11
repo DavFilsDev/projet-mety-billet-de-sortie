@@ -1,45 +1,56 @@
-import React, { useState, useEffect } from 'react';
-import { db } from '../config/firebase-config';
-import { collection, addDoc, query, orderBy, onSnapshot } from 'firebase/firestore';
-import '../styles/AjouterEtudiant.css';
-import { NavLink } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { db } from "../config/firebase-config";
+import {
+  collection,
+  addDoc,
+  query,
+  orderBy,
+  onSnapshot,
+} from "firebase/firestore";
+import "../styles/AjouterEtudiant.css";
+import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function AjouterGardien() {
-  const [identifiant, setIdentifiant] = useState(''); // Nouveau champ pour l'identifiant
-  const [nomGardien, setNomGardien] = useState('');
-  const [email, setEmail] = useState('');
-  const [tel, setTel] = useState('');
+  const [identifiant, setIdentifiant] = useState(""); // Nouveau champ pour l'identifiant
+  const [nomGardien, setNomGardien] = useState("");
+  const [email, setEmail] = useState("");
+  const [tel, setTel] = useState("");
   const [showForm, setShowForm] = useState(true);
   const [gardiens, setGardiens] = useState([]);
+  const { t } = useTranslation(); // Hook pour les traductions
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       // Ajoutez le nouveau gardien
-      await addDoc(collection(db, 'GardienTab'), {
-        identifiant,  // Sauvegarde de l'identifiant saisi manuellement
+      await addDoc(collection(db, "GardienTab"), {
+        identifiant, // Sauvegarde de l'identifiant saisi manuellement
         email,
         nomGardien,
         tel,
       });
 
       // Réinitialisez le formulaire
-      setIdentifiant(''); // Réinitialiser le champ identifiant
-      setNomGardien('');
-      setEmail('');
-      setTel('');
+      setIdentifiant(""); // Réinitialiser le champ identifiant
+      setNomGardien("");
+      setEmail("");
+      setTel("");
 
-      alert('Gardien ajouté avec succès !');
+      alert("Gardien ajouté avec succès !");
     } catch (error) {
-      console.error('Erreur lors de l\'ajout du gardien :', error);
-      alert('Erreur lors de l\'ajout du gardien.');
+      console.error("Erreur lors de l'ajout du gardien :", error);
+      alert("Erreur lors de l'ajout du gardien.");
     }
   };
 
   useEffect(() => {
     // Observer les changements dans la collection GardienTab
-    const q = query(collection(db, 'GardienTab'), orderBy('identifiant', 'asc'));
+    const q = query(
+      collection(db, "GardienTab"),
+      orderBy("identifiant", "asc")
+    );
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const gardiensList = [];
       querySnapshot.forEach((doc) => {
@@ -118,7 +129,8 @@ function AjouterGardien() {
                 <tbody>
                   {gardiens.map((gardien) => (
                     <tr key={gardien.id}>
-                      <td>{gardien.identifiant}</td> {/* Affichage de l'identifiant */}
+                      <td>{gardien.identifiant}</td>{" "}
+                      {/* Affichage de l'identifiant */}
                       <td>{gardien.email}</td>
                       <td>{gardien.tel}</td>
                       <td>{gardien.nomGardien}</td>
@@ -130,8 +142,12 @@ function AjouterGardien() {
             </div>
           </>
         )}
-        <button  className='butt' onClick={toggleForm}>{showForm ? 'Afficher les gardiens' : 'Ajouter gardien'}</button>
-     
+
+        <button onClick={toggleForm}>
+          {showForm ? "Afficher les gardiens" : "Ajouter gardien"}
+        </button>
+      </div>
+
     </>
   );
 }

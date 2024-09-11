@@ -1,18 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import { db } from '../config/firebase-config';
-import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
-import '../styles/SupprimerEtudiant.css'; // Vous pouvez créer ou réutiliser ce fichier CSS
-import { NavLink } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { db } from "../config/firebase-config";
+import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
+import "../styles/SupprimerEtudiant.css"; // Vous pouvez créer ou réutiliser ce fichier CSS
+import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function SupprimerGardien() {
   const [gardiens, setGardiens] = useState([]);
   const [gardienToDelete, setGardienToDelete] = useState(null);
   const [showConfirm, setShowConfirm] = useState(false);
+  const { t } = useTranslation(); // Hook pour utiliser les traductions
 
   useEffect(() => {
     const fetchGardiens = async () => {
-      const querySnapshot = await getDocs(collection(db, 'GardienTab'));
-      const gardiensList = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      const querySnapshot = await getDocs(collection(db, "GardienTab"));
+      const gardiensList = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
       setGardiens(gardiensList.sort((a, b) => a.Identifiant - b.Identifiant));
     };
 
@@ -21,13 +26,13 @@ function SupprimerGardien() {
 
   const handleDelete = async (id) => {
     try {
-      await deleteDoc(doc(db, 'GardienTab', id));
-      setGardiens(gardiens.filter(gardien => gardien.id !== id));
+      await deleteDoc(doc(db, "GardienTab", id));
+      setGardiens(gardiens.filter((gardien) => gardien.id !== id));
       setShowConfirm(false);
-      alert('Gardien supprimé avec succès !');
+      alert("Gardien supprimé avec succès !");
     } catch (error) {
-      console.error('Erreur lors de la suppression du gardien :', error);
-      alert('Erreur lors de la suppression du gardien.');
+      console.error("Erreur lors de la suppression du gardien :", error);
+      alert("Erreur lors de la suppression du gardien.");
     }
   };
 
@@ -52,7 +57,7 @@ function SupprimerGardien() {
               </tr>
             </thead>
             <tbody>
-              {gardiens.map(gardien => (
+              {gardiens.map((gardien) => (
                 <tr key={gardien.id}>
                   <td>{gardien.identifiant}</td>
                   <td>{gardien.email}</td>
