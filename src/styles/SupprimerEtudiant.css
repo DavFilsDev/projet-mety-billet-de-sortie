@@ -135,26 +135,44 @@ button:hover {
 .cancel-button:hover {
   background-color: #d35400;
 }
+.back-btn5{
+  width: 100px;
+  border-radius: 5px;
+  background-color: #00bfa6;
+  font-size:small;
+  color: black;
+  text-decoration: underline #00bfa6 ;
+  transition: 0.3s ease;
+  cursor: pointer;
+  
+}
+.back-btn5:hover{
+  background-color:#CC6600;
+  color: #333333;
+  text-decoration: underline#CC6600;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
 
 /* Media Queries pour une meilleure adaptation */
-@media (max-width: 768px) {
+@media (max-width: 40%) {
   .container {
     padding: 20px;
-    width: 95%;
+    width: 40%;
   }
 
   h2 {
-    font-size: 22px;
+    font-size: 16px;
   }
 
   table th, table td {
     padding: 12px;
-    font-size: 14px;
+    font-size: 12px;
   }
 
   button {
     padding: 10px 15px;
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .confirm-dialog {
@@ -162,13 +180,21 @@ button:hover {
   }
 
   .confirm-dialog p {
-    font-size: 16px;
+    font-size: 12px;
+  }
+  .back-btn5:hover{
+    background-color:#CC6600;
+    color: #333333;
+    text-decoration: underline#CC6600;
+    transition: 0.3s ease;
+    cursor: pointer;
+
   }
 }
 
 @media (max-width: 480px) {
   h2 {
-    font-size: 20px;
+    font-size: 12px;
   }
 
   button {
@@ -177,6 +203,14 @@ button:hover {
   }
 
   .confirm-dialog p {
-    font-size: 14px;
+    font-size: 12px;
+  }
+  .back-btn5:hover{
+    background-color:#CC6600;
+    color: #333333;
+    text-decoration: underline#CC6600;
+    transition: 0.3s ease;
+    cursor: pointer;
+
   }
 }

@@ -3,20 +3,40 @@
   flex-direction: column;
   padding: 50px 20px;
   width: 100%;
- /*  background-color: #128aec; */
   height: 40%;
    gap: 70px;
    align-items: center;
    border-radius: 10px;
   /* Ajouter un espacement entre les sections */
 }
+.orange-button{
+  color: #d8761c;
+  text-decoration: underline #d8761c; 
+}
 
-@media (min-width: 768px) {
+
+@media (min-width: 360px) {
   .main-content {
       flex-direction: row;
       justify-content: space-between;
       padding: 20px;
       width: 50%;
+  }
+  .button-container {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 40%;
+  }
+  .orange-button{
+    color: #d8761c;
+    text-decoration: underline #d8761c; 
+    width: 40px;
+  }
+  .orange-button {
+ 
+    color: white;
+    width: 370px;
+    height: 20%;
   }
 }
 
@@ -27,30 +47,40 @@
   width: 100%;
   max-width: 300px;
   margin-bottom: 20px;
-  /* Ajout de margin pour espacement supplémentaire */
+ 
 }
 
 .button {
-  width: 100%;
-  padding: 15px;
+  padding: 10px 20px;
   font-size: 16px;
-  font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  /* Transition douce pour l'arrière-plan */
 }
+.illustration-container{
+  flex-direction:50%;
+}
+.illustration{
+  width:50%;
+  flex-direction:column;
+}
+
+@media (max-width: 768px) {
+  button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
 
 .button:hover {
   opacity: 0.9;
-  /* Légère transparence pour l'effet de survol */
+ 
 }
 
 
 .orange-button {
   background-color: #d8761c;
   color: white;
+  width: 370px;
+  height: 20%;
 }
 
 .illustration-container {
@@ -61,12 +91,12 @@
 }
 
 .illustration {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 15px;
+  width: 300px;
+  height: 100%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   margin-top: 20px;
   transition: transform 0.3s ease;
+  margin-left: 180px;
   /* Transition pour un léger effet de zoom */
 }
 @media (max-width:768px) {
@@ -88,7 +118,6 @@
 }
 .illustration:hover {
   transform: scale(1.05);
-  /* Léger zoom au survol */
 }
 
   

@@ -12,6 +12,7 @@ export default function HeureSortie() {
       <div>
         <h2>Voici les heures de sortie disponible :</h2>
       </div>
+
     </>
   );
 }

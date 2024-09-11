@@ -39,7 +39,7 @@ function SupprimerGardien() {
   return (
     <>
       <NavLink to="/Connections/AdminHome">
-        <button className="back-btn">Retour</button>
+        <button className="back-btn5">Retour</button>
       </NavLink>
       <div className="form-container">
         <h2>Liste des gardiens</h2>

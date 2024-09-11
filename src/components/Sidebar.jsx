@@ -51,6 +51,7 @@ function Sidebar({ onSelectMenu }) {
   );
 }
 const styles = {
+
   sidebar: {
     width: "80px",
     backgroundColor: "#009DE1",

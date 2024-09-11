@@ -38,7 +38,7 @@ button.google-login-button:hover {
 } */
 
 
-.container {
+.container1 {
   display: flex;
   gap: 20px;
   justify-content: center;
@@ -47,7 +47,7 @@ button.google-login-button:hover {
   flex-wrap: wrap;
 }
 
-.option {
+.option1 {
   background-color:#22BBEA;
   color: white;
   text-align: center;
@@ -61,7 +61,7 @@ button.google-login-button:hover {
   margin-bottom: 20px;
 }
 
-.option .icon {
+.option1 .icon {
   background-color:#FF9933;
   width: 150vh;
   height: 150vh;
@@ -77,14 +77,14 @@ button.google-login-button:hover {
   
 }
 
-.option .titre {
+.option1 .titre {
   font-size: 20px;
   font-weight: bold;
   color: #0b0801;
   justify-content: center;
 }
 
-.option button {
+.option1 button {
   background-color: #130d07;
    display: flex;
   color: white;
@@ -94,14 +94,14 @@ button.google-login-button:hover {
   cursor: pointer;  
 }
 
-.option button img {
+.option1 button img {
   width: 20px;
   height: 20px;
   margin-right: 5px;
   margin-top: -2px;
 }
 
-.option:hover {
+.option1:hover {
   transform: scale(1.05);
 }
 
@@ -112,28 +112,28 @@ button.google-login-button:hover {
 /* Media queries for different screen sizes */
 
 @media (min-width: 600px) {
-  .option {
+  .option1 {
       width: 45vw;
   }
 }
 
 @media (min-width: 768px) {
-  .option {
+  .option1 {
       width: 30vw;
   }
 
-  .option .icon {
+  .option1 .icon {
       width: 20vw;
       height: 20vw;
   }
 }
 
 @media (min-width: 1024px) {
-  .option {
+  .option1 {
       width: 20vw;
   }
 
-  .option .icon {
+  .option1 .icon {
       width: 10vw;
       height: 10vw;
   }

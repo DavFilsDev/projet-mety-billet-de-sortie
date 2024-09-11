@@ -25,6 +25,7 @@ const HistoriqueDemandes = () => {
           <button className="tab">Aujourd'hui</button>
           <button className="tab">Cette semaine</button>
           <button className="tab">Cette mois</button>
+
         </div>
         <table className="demandes-table">
           <thead>

@@ -24,7 +24,7 @@ const Header = () => {
             <NavLink
               to="/"
               className="header__link"
-              activeClassName="header__link--active"
+              activeClassName="header__link--active1"
             >
               Accueil
             </NavLink>
@@ -33,7 +33,7 @@ const Header = () => {
             <NavLink
               to="/Apropos"
               className="header__link"
-              activeClassName="header__link--active"
+              activeClassName="header__link--active1"
             >
               A propos
             </NavLink>
@@ -46,8 +46,15 @@ const Header = () => {
         </ul>
       </nav>
 
-      {/* Bouton de changement de langue */}
-      <LanguageSwitcher />
+
+      <div className="langue" style={styles.languageSelector}>
+        <label htmlFor="language">Langue: </label>
+        <select id="language" value={language} onChange={handleLanguageChange}>
+          <option value="mg">Malagasy</option>
+          <option value="fr">Français</option>
+          <option value="en">English</option>
+        </select>
+      </div>
     </header>
   );
 };

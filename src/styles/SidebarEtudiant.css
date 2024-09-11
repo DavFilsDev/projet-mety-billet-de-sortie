@@ -1,0 +1,68 @@
+.SidebarEtudiant {
+    width: 80px;
+    background-color : #009DE1;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    border-radius: 0 10px 10px 0;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    transition: all 0.3s ease;
+}
+.menuItem {
+    width: 60px;
+    height: 80px;
+    margin-bottom:20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+.logo {
+    width: 60px;
+    margin-bottom: 30px;
+    transition:   0.3s ease;
+}
+.icon {
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease
+}
+
+.label{
+    margin-top:5px;
+    font-size:10px;
+    color: white;
+    text-transform: capitalize;
+    transition:  0.3s ease;
+}
+@media (max-width: 360px) {
+    .SidebarEtudiant{
+        width: 60%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 5px 0;
+        border-radius: 0;
+        flex-direction: column;
+        border-radius: 0 5px 5px 0;
+    }
+    .logo {
+        width: 30px;
+    }
+    .menuItem {
+        width: 40px;
+        height: 60px;
+    }
+    .icon {
+        width: 16px;
+        height: 16px;
+    }
+    .label {
+        font-size: 7px;
+    }
+}

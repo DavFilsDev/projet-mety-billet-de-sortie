@@ -39,7 +39,7 @@ function SupprimerEtudiant() {
   return (
     <>
       <NavLink to="/Connections/AdminHome">
-        <button className="back-btn1">Retour</button>
+        <button className="back-btn5"> Retour </button>
       </NavLink>
       <div className="container">
         <h2>Liste des étudiants</h2>

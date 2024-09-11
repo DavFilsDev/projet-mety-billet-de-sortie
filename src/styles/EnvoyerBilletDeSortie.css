@@ -33,6 +33,25 @@ body {
   transform: translateY(-5px);
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
 }
+.subm1{
+  width: 100px;
+  border-radius: 5px;
+  background-color: #00bfa6;
+  margin-left: 280px;
+  font-size:small;
+  color: black;
+  text-decoration: underline #00bfa6 ;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.subm1:hover{
+  background-color:#FF9933;
+  color: #333333;
+  text-decoration: underline#FF9933;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
 
 .form-container h2 {
   text-align: center;
@@ -123,7 +142,7 @@ button:hover {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 360px) {
   .form-container h2 {
     font-size: 20px;
   }
@@ -136,5 +155,16 @@ button:hover {
   button {
     font-size: 14px;
     padding: 10px;
+  }
+  .subm1{
+    width: 60px;
+    font-size: 0.65rem;
+    margin-left: 130px;
+    margin-top: -2px;
+  }
+  .subm1:hover{
+    font-size: 0.7rem;
+    color: #e87c33;
+    
   }
 }

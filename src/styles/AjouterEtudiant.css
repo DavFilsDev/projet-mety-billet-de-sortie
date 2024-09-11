@@ -9,19 +9,32 @@
   background-color: #fff; /* Arrière-plan blanc pour un contraste propre */
   transition: all 0.3s ease-in-out;
 }
+.form-container1{
+  padding: 20px;
+  border-radius: 10px;
+  width: 65%;
+  margin: 20px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre douce pour créer de la profondeur */
+  background-color: #fff; /* Arrière-plan blanc pour un contraste propre */
+  transition: all 0.3s ease-in-out;
 
-.form-container h2 {
+}
+
+.form-container1 h2 {
   text-align: center;
   color: #2E3A59; /* Couleur moderne et agréable pour les titres */
-  margin-bottom: 20px;
-  font-size: 1.8rem;
+  margin-bottom: 18px;
+  font-size: 18px;
 }
 
-.form-group {
-  margin-bottom: 20px;
+.form-group1 {
+  max-height: 40%;
+  margin-bottom: 10px;
+  width: 70%;
+  margin-left: 60px;
 }
 
-.form-group label {
+.form-group1 label {
   display: block;
   margin-bottom: 8px;
   color: #333; /* Couleur douce pour le texte des labels */
@@ -29,18 +42,18 @@
   font-weight: 500;
 }
 
-.form-group input {
+.form-group1 input {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc; /* Bordures plus douces */
+  border: 3px solid #ccc; /* Bordures plus douces */
   border-radius: 8px;
   box-sizing: border-box;
   font-size: 1rem;
-  transition: border-color 0.3s ease;
+  transition:  0.3s ease;
 }
 
-.form-group input:focus {
-  border-color: #e87c33; /* Bordure orange lors du focus */
+.form-group1 input:focus {
+  border-color:#FF9933; /* Bordure orange lors du focus */
   outline: none;
 }
 
@@ -48,7 +61,7 @@ button {
   display: block;
   width: 100%;
   padding: 12px;
-  background-color: #e87c33;
+  background-color:#FF9933;
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -56,51 +69,56 @@ button {
   font-size: 1rem;
   margin-top: 10px;
   transition: background-color 0.3s ease;
+  margin-left: 40vw;
 }
 
 button:hover {
   background-color: #d46f29; /* Couleur plus foncée au survol */
 }
 
-.back-btn1 {
-  margin-left: 20px;
-  color: #e87c33;
-  font-size: 1rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.back-btn1:hover {
-  color: #d46f29;
-}
+ 
 
 /* Styles pour le tableau des étudiants */
-.students-table-container {
+.studen-table-container1 {
   margin-top: 20px;
 }
 
-.students-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
+.butt{
+  margin-left: 41vw;
+  margin-top: -15px;
+  width: 200px;
+  background-color: #e87c33;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 10px 20px;
 }
 
-.students-table th, .students-table td {
+.studen-table {
+  width: 60%;
+  margin-left: 100px;
+  border-radius: 20px;
+  
+}
+
+.studen-table th, .studen-table td {
   border: 1px solid #ddd;
   padding: 12px;
-  font-size: 0.9rem;
-  text-align: left;
+  font-size: 12px;
+  text-align: center;
+
 }
 
-.students-table th {
-  background-color: #f4f4f4;
-  font-weight: 600;
+.studen-table th {
+  background-color: #22BBEA;
+  text-transform: lowercase;
   color: #333;
+  
 }
 
-.students-table tr:nth-child(even) {
+.studen-table tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
@@ -108,11 +126,58 @@ button:hover {
   background-color: #ddd;
 }
 
+.back-btn5{
+  width: 100px;
+  border-radius: 5px;
+  background-color: #00bfa6;
+  font-size:small;
+  color: black;
+  text-decoration: underline #00bfa6 ;
+  transition: 0.3s ease;
+  cursor: pointer;
+  
+}
+.back-btn5:hover{
+  background-color:#CC6600;
+  color: #333333;
+  text-decoration: underline#CC6600;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.subm{
+  width: 100px;
+  border-radius: 5px;
+  background-color: #00bfa6;
+  margin-left: 140px;
+  font-size:small;
+  color: black;
+  text-decoration: underline #00bfa6 ;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.subm:hover{
+  background-color:#FF9933;
+  color: #333333;
+  text-decoration: underline#FF9933;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
 /* Responsive Design: Ajustements pour différentes tailles d'écrans */
-@media (max-width: 768px) {
+@media (max-width: 360px) {
   .form-container {
-    max-width: 80%;
+    width: 80%;
     padding: 15px;
+    
+  }
+  .form-container1 {
+    width: 40vh;
+    padding: 15px;
+    
+  }
+  .form-container1 h2 {
+    font-size: small;
   }
 
   .form-group label {
@@ -127,11 +192,72 @@ button:hover {
   button {
     padding: 10px;
     font-size: 0.9rem;
+    margin-left: 30vw;
+  }
+  .back-btn5 {
+    width: 80px;
+    font-size: 0.70rem;
+    margin-left: 130px;
+    margin-top: -5px;
+  }
+  .back-btn5:hover{
+    background-color:#FF9933;
   }
 
   .students-table th, .students-table td {
     padding: 10px;
     font-size: 0.85rem;
+  }
+  .subm{
+    width: 60px;
+    font-size: 0.65rem;
+    margin-left: 37vw;
+    margin-top: -2px;
+  }
+  .subm:hover{
+    background-color:#FF9933;
+  }
+  .butt{
+    width: 50%;
+    background-color: #FF9933;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    padding:  15px;
+    margin-top: -5px;
+    margin-left: 25vw;
+  }
+
+  .form-group1 {
+    max-height: 40%;
+    margin-bottom: 10px;
+    width: 70%;
+    margin-left: 40px;
+  }
+  .studen-table {
+    width: 20%;
+    margin-left: -10px;
+    border-radius: 20px;
+    font-size: 8px;
+    margin-left: -18px;
+    
+  }
+  .studen-table th, .studen-table td {
+    padding: 10px;
+    font-size: 8px;
+    margin: 5px;
+    text-align: left;
+  }
+  .studen-table-container1{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-height: 50%;
+  }
+  .studen-table th{
+    font-size: 11px ;
+    padding: 5px;
   }
 }
 
@@ -157,5 +283,8 @@ button:hover {
   .students-table th, .students-table td {
     padding: 8px;
     font-size: 0.8rem;
+  }
+  .butt {
+    margin-left: 30vw;
   }
 }

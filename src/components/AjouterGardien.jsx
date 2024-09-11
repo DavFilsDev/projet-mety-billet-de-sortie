@@ -66,15 +66,16 @@ function AjouterGardien() {
   return (
     <>
       <NavLink to="/Connections/AdminHome">
-        <button className="back-btn1">Retour</button>
+        <button className="back-btn5">Retour</button>
       </NavLink>
 
-      <div className="form-container">
+    
         {showForm ? (
           <>
+            <div className="form-container">
             <h2>Ajouter un gardien</h2>
             <form onSubmit={handleSubmit}>
-              <div className="form-group">
+              <div className="form-group1">
                 <label>Identifiant :</label> {/* Nouveau champ Identifiant */}
                 <input
                   type="text"
@@ -82,7 +83,7 @@ function AjouterGardien() {
                   onChange={(e) => setIdentifiant(e.target.value)}
                 />
               </div>
-              <div className="form-group">
+              <div className="form-group1">
                 <label>Nom d'utilisateur :</label>
                 <input
                   type="text"
@@ -90,7 +91,7 @@ function AjouterGardien() {
                   onChange={(e) => setNomGardien(e.target.value)}
                 />
               </div>
-              <div className="form-group">
+              <div className="form-group1">
                 <label>Adresse Email :</label>
                 <input
                   type="email"
@@ -98,7 +99,7 @@ function AjouterGardien() {
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
-              <div className="form-group">
+              <div className="form-group1">
                 <label>Téléphone :</label>
                 <input
                   type="tel"
@@ -106,15 +107,17 @@ function AjouterGardien() {
                   onChange={(e) => setTel(e.target.value)}
                 />
               </div>
-              <button type="submit">Ajouter</button>
+              <button className='subm' type="submit">Ajouter</button>
             </form>
+            </div>
           </>
         ) : (
           <>
+           <div className="form-container1">
             <button onClick={toggleForm}>Ajouter gardien</button>
-            <div className="students-table-container">
+            <div className="studen-table-container1">
               <h2>Liste des gardiens</h2>
-              <table className="students-table">
+              <table className="studen-table">
                 <thead>
                   <tr>
                     <th>Identifiant</th>
@@ -136,12 +139,15 @@ function AjouterGardien() {
                 </tbody>
               </table>
             </div>
+            </div>
           </>
         )}
+
         <button onClick={toggleForm}>
           {showForm ? "Afficher les gardiens" : "Ajouter gardien"}
         </button>
       </div>
+
     </>
   );
 }

@@ -32,9 +32,9 @@ function EnvoyerBilletDeSortie() {
   return (
     <>
       <NavLink to="/Connections/AdminHome">
-        <button className="back-Valisoa">Retour</button>
+        <button className="back-btn5">Retour</button>
       </NavLink>
-      <div className="form-container">
+      <div className="form-container1">
         <h2>Envoyer billet de sortie</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -61,9 +61,9 @@ function EnvoyerBilletDeSortie() {
           <div className="form-group">
             <label htmlFor="reason">La raison de la sortie :</label>
             <select id="reason" value={reason} onChange={handleReasonChange}>
-              <option value="family">Visite de famille</option>
-              <option value="medical">Rendez-vous médical</option>
-              <option value="shopping">Courses</option>
+              <option value="Visite de famille">Visite de famille</option>
+              <option value="Rendez-vous médical">Rendez-vous médical</option>
+              <option value="Courses">Courses</option>
               <option value="other">Autres</option>
             </select>
           </div>
@@ -80,7 +80,7 @@ function EnvoyerBilletDeSortie() {
             </div>
           )}
 
-          <button type="submit">Envoyer</button>
+          <button className='subm1' type="submit">Envoyer</button>
         </form>
       </div>
     </>

@@ -1,11 +1,14 @@
+
 import React from "react";
 import PhotoAdmin from "../assets/Images/adminPhoto.png";
 import { NavLink, useNavigate } from "react-router-dom";
+
 import { signOut } from "firebase/auth";
 import { auth } from "../config/firebase-config";
 import { useTranslation } from "react-i18next";
 
 function AdminBody({ selectedMenu }) {
+
   const { t } = useTranslation(); // Hook pour utiliser les traductions
   const navigate = useNavigate();
   let content;

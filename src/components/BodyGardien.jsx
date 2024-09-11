@@ -612,6 +612,7 @@ const styles = {
   verificationButtonHover: {
     backgroundColor: "#45a049",
   },
+
 };
 
 export default ListeEtudiantsSortis;

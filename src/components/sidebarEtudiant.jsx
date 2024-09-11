@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import imagehome from "../assets/Images/home.png";
 import imagesetting from "../assets/Images/setting.png";
@@ -18,6 +19,7 @@ function SidebarEtudiant({ onSelectMenu }) {
   const handleMouseLeave = () => {
     setHovered("");
   };
+
 
   return (
     <div style={styles.SidebarEtudiant}>
@@ -45,11 +47,13 @@ function SidebarEtudiant({ onSelectMenu }) {
             }}
           />
           {hovered === item.name && <div style={styles.label}>{item.name}</div>}
+
         </div>
       ))}
     </div>
   );
 }
+
 
 const styles = {
   SidebarEtudiant: {
@@ -167,5 +171,6 @@ const styles = {
     },
   },
 };
+
 
 export default SidebarEtudiant;

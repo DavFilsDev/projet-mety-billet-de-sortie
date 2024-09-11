@@ -96,6 +96,7 @@ const styles = {
   // Styles pour les écrans moyens et petits
   "@media (max-width: 1024px)": {
     SidebarEtudiant: {
+
       width: "60px",
       height: "auto",
       flexDirection: "row",
