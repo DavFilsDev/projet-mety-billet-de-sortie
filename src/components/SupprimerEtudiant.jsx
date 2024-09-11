@@ -1,33 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import { db } from '../config/firebase-config';
-import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
-import '../styles/SupprimerEtudiant.css';
-import { NavLink } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { db } from "../config/firebase-config";
+import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
+import "../styles/SupprimerEtudiant.css";
+import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function SupprimerEtudiant() {
   const [etudiants, setEtudiants] = useState([]);
   const [studentToDelete, setStudentToDelete] = useState(null);
   const [showConfirm, setShowConfirm] = useState(false);
+  const { t } = useTranslation(); // Hook pour utiliser les traductions
 
   useEffect(() => {
     const fetchEtudiants = async () => {
-      const querySnapshot = await getDocs(collection(db, 'EtudiantTab'));
-      const students = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      const querySnapshot = await getDocs(collection(db, "EtudiantTab"));
+      const students = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
       setEtudiants(students.sort((a, b) => a.Identifiant - b.Identifiant));
     };
-    
+
     fetchEtudiants();
   }, []);
 
   const handleDelete = async (id) => {
     try {
-      await deleteDoc(doc(db, 'EtudiantTab', id));
-      setEtudiants(etudiants.filter(student => student.id !== id));
+      await deleteDoc(doc(db, "EtudiantTab", id));
+      setEtudiants(etudiants.filter((student) => student.id !== id));
       setShowConfirm(false);
-      alert('Étudiant supprimé avec succès !');
+      alert("Étudiant supprimé avec succès !");
     } catch (error) {
-      console.error('Erreur lors de la suppression de l\'étudiant :', error);
-      alert('Erreur lors de la suppression de l\'étudiant.');
+      console.error("Erreur lors de la suppression de l'étudiant :", error);
+      alert("Erreur lors de la suppression de l'étudiant.");
     }
   };
 
@@ -52,7 +57,7 @@ function SupprimerEtudiant() {
               </tr>
             </thead>
             <tbody>
-              {etudiants.map(student => (
+              {etudiants.map((student) => (
                 <tr key={student.id}>
                   <td>{student.identifiant}</td>
                   <td>{student.email}</td>

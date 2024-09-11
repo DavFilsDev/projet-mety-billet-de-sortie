@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../styles/Hearder.css";
 import { NavLink } from "react-router-dom";
 import Mylogo from "../assets/Images/Logo.png"; // Importation du logo
+import LanguageSwitcher from "./LanguageSwitcher"; // Assure-toi que le chemin est correct
 
 const Header = () => {
   const [language, setLanguage] = useState("fr"); // Langue par défaut : Français
@@ -44,14 +45,9 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <div style={styles.languageSelector}>
-        <label htmlFor="language">Langue: </label>
-        <select id="language" value={language} onChange={handleLanguageChange}>
-          <option value="mg">Malagasy</option>
-          <option value="fr">Français</option>
-          <option value="en">English</option>
-        </select>
-      </div>
+
+      {/* Bouton de changement de langue */}
+      <LanguageSwitcher />
     </header>
   );
 };

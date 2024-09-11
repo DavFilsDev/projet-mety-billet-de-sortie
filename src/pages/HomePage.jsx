@@ -6,8 +6,18 @@ import image1 from "../assets/Images/imageAccueil1.jpg";
 import image2 from "../assets/Images/imageAccueil2.jpg";
 import image3 from "../assets/Images/imageAccueil3.jpg";
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { useLang } from "../i18n"; // Import du hook useLang
 
+const translations = {
+  en: { welcomeMessage: "Welcome to the home page" },
+  fr: { welcomeMessage: "Bienvenue sur la page d'accueil" },
+  mg: { welcomeMessage: "Tonga soa eto amin'ny pejy fandraisana" },
+};
 const HomePage = () => {
+  const { t } = useTranslation(); // Hook pour utiliser les traductions
+  const { language } = useLang(); // Utiliser le contexte de langue
+
   return (
     <>
       <Header />
