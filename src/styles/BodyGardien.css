@@ -402,6 +402,14 @@
     padding-bottom: 5px;
     transition: color 0.3s ease, border-bottom 0.3s ease;
 }
+ 
+ 
+.active{
+    color: #FF9933;
+    border-bottom: 2px solid #FF9933;
+}
+ 
+ 
 .bodyCont1{
     margin-left:320px;
     margin-top:130px;
@@ -409,7 +417,9 @@
     height:20%;
 }
 
+ 
 
+ 
 .notificationList {
     max-width: 250px;
     overflow-y: auto;

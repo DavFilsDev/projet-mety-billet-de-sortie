@@ -1,8 +1,16 @@
+import React, { useState } from "react";
 import "../styles/Hearder.css";
 import { NavLink } from "react-router-dom";
 import Mylogo from "../assets/Images/Logo.png"; // Importation du logo
 
 const Header = () => {
+  const [language, setLanguage] = useState("fr"); // Langue par défaut : Français
+
+  const handleLanguageChange = (e) => {
+    setLanguage(e.target.value);
+    // Ajouter la logique pour changer la langue ici
+    console.log("Langue choisie :", e.target.value);
+  };
 
   return (
     <header className="header">
