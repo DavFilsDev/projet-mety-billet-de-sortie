@@ -16,13 +16,13 @@
   width: 65%;
   margin: 20px auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre douce pour créer de la profondeur */
-  background-color: #fff; /* Arrière-plan blanc pour un contraste propre */
+  background-color: #fff;
   transition: all 0.3s ease-in-out;
 }
 
 .form-container1 h2 {
   text-align: center;
-  color: #2e3a59; /* Couleur moderne et agréable pour les titres */
+  color: #2e3a59;
   margin-bottom: 18px;
   font-size: 18px;
 }
@@ -30,22 +30,22 @@
 .form-group1 {
   max-height: 40%;
   margin-bottom: 10px;
-  width: 70%;
-  margin-left: 60px;
+  width: 100%;
+  margin-left: 10px;
 }
 
 .form-group1 label {
   display: block;
   margin-bottom: 8px;
-  color: #333; /* Couleur douce pour le texte des labels */
+  color: #333;
   font-size: 1rem;
   font-weight: 500;
 }
 
 .form-group1 input {
-  width: 100%;
+  width: 90%;
   padding: 10px;
-  border: 3px solid #ccc; /* Bordures plus douces */
+  border: 3px solid #ccc;
   border-radius: 8px;
   box-sizing: border-box;
   font-size: 1rem;
@@ -53,13 +53,13 @@
 }
 
 .form-group1 input:focus {
-  border-color: #ff9933; /* Bordure orange lors du focus */
+  border-color: #ff9933;
   outline: none;
 }
 
-button {
+.button {
   display: block;
-  width: 100%;
+  width: 50%;
   padding: 12px;
   background-color: #ff9933;
   color: #ffffff;
@@ -68,23 +68,22 @@ button {
   cursor: pointer;
   font-size: 1rem;
   margin-top: 10px;
+  margin-left: 15vw;
   transition: background-color 0.3s ease;
-  margin-left: 40vw;
 }
 
 button:hover {
-  background-color: #d46f29; /* Couleur plus foncée au survol */
+  background-color: #d46f29;
 }
 
 /* Styles pour le tableau des étudiants */
 .studen-table-container1 {
   margin-top: 20px;
-  overflow-x: auto; /* Ajout d'un scroll horizontal */
-  white-space: nowrap; /* Evite que le tableau se réduise trop */
+  overflow-x: auto; /* Ajout pour permettre le défilement horizontal */
 }
 
 .butt {
-  margin-left: 28vw;
+  margin-left: 41vw;
   margin-top: -15px;
   width: 200px;
   background-color: #e87c33;
@@ -97,9 +96,12 @@ button:hover {
 }
 
 .studen-table {
-  width: 100%; /* Utilisation complète de la largeur */
+  width: 100%;
   border-radius: 20px;
   overflow-x: auto;
+  max-height: 400px; /* Limite de hauteur avec scroll vertical */
+  display: block;
+  margin-left: 10px;
 }
 
 .studen-table th,
@@ -120,69 +122,106 @@ button:hover {
   background-color: #f9f9f9;
 }
 
-.students-table tr:hover {
+.studen-table tr:hover {
   background-color: #ddd;
 }
 
-.back-btn5 {
-  width: 100px;
-  border-radius: 5px;
+/* Bouton pour afficher les colonnes supplémentaires */
+.show-columns-btn {
+  display: none;
+  margin-top: 10px;
   background-color: #00bfa6;
-  font-size: small;
-  color: black;
-  text-decoration: underline #00bfa6;
-  transition: 0.3s ease;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
   cursor: pointer;
 }
 
-.back-btn5:hover {
-  background-color: #cc6600;
-  color: #333333;
-  text-decoration: underline #cc6600;
-  transition: 0.3s ease;
+.studen-table {
+  width: 100%;
+  border-radius: 20px;
+  display: block;
+  min-width: 600px; /* Ajout pour garantir que le tableau est assez large pour nécessiter un défilement horizontal */
+  overflow-x: auto; /* Ajout pour permettre le défilement horizontal */
+  overflow-y: hidden; /* Ajout pour ne pas avoir de défilement vertical par défaut */
+  max-height: 400px; /* Limite de hauteur avec scroll vertical */
 }
 
-.subm {
-  width: 100px;
-  border-radius: 5px;
+.studen-table th,
+.studen-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.studen-table th {
+  background-color: #22bbea;
+  text-transform: lowercase;
+  color: #333;
+}
+
+.studen-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.studen-table tr:hover {
+  background-color: #ddd;
+}
+
+/* Bouton pour afficher les colonnes supplémentaires */
+.show-columns-btn {
+  display: none;
+  margin-top: 10px;
   background-color: #00bfa6;
-  margin-left: 220px;
-  font-size: small;
-  color: black;
-  text-decoration: underline #00bfa6;
-  transition: 0.3s ease;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
   cursor: pointer;
 }
 
-.subm:hover {
-  background-color: #ff9933;
-  color: #333333;
-  text-decoration: underline #ff9933;
-  transition: 0.3s ease;
-}
-
-/* Responsive Design: Ajustements pour différentes tailles d'écrans */
-@media (max-width: 768px) {
+/* Responsiveness */
+@media screen and (max-width: 360px) {
+  .form-container,
   .form-container1 {
-    width: 90%;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .form-group1 {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  button,
+  .butt {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .studen-table-container1 {
+    overflow-x: auto;
   }
 
   .studen-table {
-    display: block;
-    width: 100%;
-    overflow-x: scroll; /* Permet de défiler si trop large */
+    max-height: 300px; /* Défilement vertical si trop grand */
+    overflow-y: auto; /* Ajout pour permettre le défilement vertical */
+    overflow-x: auto; /* Ajout pour permettre le défilement horizontal */
   }
 }
 
+/* Responsive Design */
 @media (max-width: 360px) {
   .form-container {
-    width: 80%;
+    width: 90%;
     padding: 15px;
   }
+
   .form-container1 {
-    width: 40vh;
+    width: 100%;
     padding: 15px;
   }
+
   .form-container1 h2 {
     font-size: small;
   }
@@ -196,19 +235,17 @@ button:hover {
     font-size: 0.9rem;
   }
 
-  button {
+  .button {
     padding: 10px;
     font-size: 0.9rem;
-    margin-left: 30vw;
+    margin-left: 20vw;
+    width: 50%;
   }
-  .back-btn5 {
+  .form-container1 .back-btn5 {
     width: 80px;
     font-size: 0.7rem;
     margin-left: 130px;
     margin-top: -5px;
-  }
-  .back-btn5:hover {
-    background-color: #ff9933;
   }
 
   .students-table th,
@@ -216,15 +253,14 @@ button:hover {
     padding: 10px;
     font-size: 0.85rem;
   }
+
   .subm {
     width: 60px;
     font-size: 0.65rem;
     margin-left: 37vw;
     margin-top: -2px;
   }
-  .subm:hover {
-    background-color: #ff9933;
-  }
+
   .butt {
     width: 50%;
     background-color: #ff9933;
@@ -239,32 +275,36 @@ button:hover {
   }
 
   .form-group1 {
-    max-height: 40%;
-    margin-bottom: 10px;
-    width: 70%;
-    margin-left: 40px;
+    width: 100%;
+    margin-left: 0;
   }
+
   .studen-table {
-    width: 20%;
-    margin-left: -10px;
-    border-radius: 20px;
+    width: 80%;
     font-size: 8px;
-    margin-left: -18px;
+    margin-left: 0;
+    border-radius: 20px;
+    overflow-x: auto;
+    overflow-y: auto; /* Ajout pour permettre le défilement vertical */
   }
+
   .studen-table th,
   .studen-table td {
     padding: 10px;
     font-size: 8px;
-    margin: 5px;
     text-align: left;
   }
+
   .studen-table-container1 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    max-height: 50%;
+    overflow-x: auto;
   }
-  .studen-table th {
-    font-size: 11px;
-    padding: 5px;
+
+  /* Bouton pour afficher les colonnes supplémentaires sur mobile */
+  .show-columns-btn {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    background-color: #00bfa6;
+    text-align: center;
   }
 }
