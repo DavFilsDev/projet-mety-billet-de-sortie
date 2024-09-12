@@ -360,7 +360,7 @@
     padding-bottom: 5px;
     transition: color 0.3s ease, border-bottom 0.3s ease;
 }
-.active {
+.active{
     color: #FF9933;
     border-bottom: 2px solid #FF9933;
 }
