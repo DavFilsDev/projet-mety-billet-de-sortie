@@ -23,7 +23,11 @@ function AdminBody({ selectedMenu }) {
             content = (
                 <div style={styles.bodyContent1}>
                     <div style={styles.body2}>
+ 
                         <h6 style={styles.titre}>Responsable de la vie internat</h6>
+ 
+                        <p className='titre5'>Responsable de la vie internat</p>
+ 
                         <NavLink to="/Connections/AdminHome/AjouterEtudiant">                          
                             <h2 style={styles.btn}>Ajouter un étudiant</h2>  
                         </NavLink>
@@ -57,7 +61,7 @@ function AdminBody({ selectedMenu }) {
                 content = (
                     <div className='bodyCo1'>
                         <div className='body4'>
-                            <h1 className='titre1'>Etudiant chez Passerelles Numériques Madagascar</h1>
+                            <h1 className='titre2'>Responsable de vie internat</h1>
                             <div className='form1'>
                                 <div className='formGroup1'>
                                     <label className='label'>Nom d'utilisateur :</label>
@@ -84,17 +88,18 @@ function AdminBody({ selectedMenu }) {
         case 'notifications': 
             content = (
                 <div style={styles.bodyCont}>
-                    <div style={styles.body1}>
+                    <h2> Aucune notification pour le moment</h2>
+                   {/*  <div style={styles.body1}>
                     <div className="notification-box">
                         <div className="header">
-                            <h2>Boîte de réception</h2>
+                            <h2>Boîte de réception</h2> */}
                             {/* <button className="close-button">&times;</button> */}
-                        </div>
+                        
 {/*                         <div className="menu">
                             <button className="menu-item active">Tout</button>
                             <button className="menu-item">Non lu</button>
                         </div> */}
-                        <div className="notifications">
+                       {/*  <div className="notifications">
                             {[...Array(1)].map((_, index) => (
                             <div key={index} className="notification">
                                 <p>La liste des étudiants en retard hier sont:</p>
@@ -113,7 +118,7 @@ function AdminBody({ selectedMenu }) {
                             ))}
                         </div>
                     </div>   
-                    </div>                
+                    </div>  */}               
                 </div>
             );
             break;
@@ -121,12 +126,12 @@ function AdminBody({ selectedMenu }) {
             case 'user':
                 content = (
                     <div className='bodyCont'>
-                        
+
                         <div className='card'>
                             <div className='profileImageContainer'>
-                                <img src=""  alt="Photo" className='profileImg'/>
+                                <img src="https://media.licdn.com/dms/image/v2/D5603AQE_qFVozIlsiA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1721732163177?e=1731542400&v=beta&t=AyWHpBxfqoLuO7xnjpeq7mzKetu71IC-I1aMIwPW2h4"  alt="Photo" className='profileImg'/>
                             </div>
-                            <div className='profileName'>Fano</div>
+                            <div className='profileName'>Luicencia</div>
                             <div className='profileTitle'>Responsable de la vie des étudiants</div>
                         </div>
                     </div>
@@ -140,7 +145,7 @@ function AdminBody({ selectedMenu }) {
     
                         <div style={styles.content}>
                             <div style={styles.carde}>
-                                <img src="" alt="Admin" style={styles.profileImg} />
+                                <img src="https://media.licdn.com/dms/image/v2/D5603AQE_qFVozIlsiA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1721732163177?e=1731542400&v=beta&t=AyWHpBxfqoLuO7xnjpeq7mzKetu71IC-I1aMIwPW2h4" alt="Admin" style={styles.profileImg} />
                                 <div style={styles.buttons}>
                                 <button onClick={logout} style={styles.logoutButton}>Se déconnecter</button>
                                     <button style={styles.cancelbtn}>Annuler</button>
@@ -210,6 +215,7 @@ const styles = {
             margin: '0 10px',
         },
     },
+ 
     titre1: {
         fontSize: '20px',
         width:'400px',
@@ -232,6 +238,12 @@ const styles = {
         color: '#000000',
         fontWeight: 'bold',
         fontSize: '15px',
+ 
+    btn: {
+        backgroundColor: '#22bbea',
+        color: '#000000',
+        fontSize: '13px',
+ 
         borderRadius: '8px',
         padding: '10px 20px',
         width: '30vw',
@@ -350,17 +362,19 @@ const styles = {
         },
     },
     profileImageContainer: {
-        width: '100px',
-        height: '100px',
+        width: '80%',
+        height: '80%',
         borderRadius: '50%',
         overflow: 'hidden',
         margin: '0 auto 10px auto',
         border: '2px solid #3FB9D7',
+        marginLeft: '-120px',
     },
     profileImg: {
-        width: '100%',
-        height: '100%',
+        width: '50%',
+        height: '50%',
         objectFit: 'cover',
+        borderRadius: '50%',
     },
     profileName: {
         fontSize: '20px',

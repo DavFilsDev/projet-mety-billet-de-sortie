@@ -138,7 +138,7 @@
     margin-bottom: 10px;
     flex-direction: column;
 }
- .titre1 {
+  h1 .titre2 {
     font-size: small;
     font-weight: bold;
     color: #333;
@@ -161,6 +161,22 @@
     font-family: Arial, sans-serif;
     margin-left:5px;
 }
+.titre5 {
+        font-size: 100%;
+        width:400px;
+        color: #000000;
+        margin-left: 50px;
+        text-decoration: underline 10px #FF9933;
+        font-weight: bold;
+    }
+    @media (max-width: 360px) {
+        .titre5{
+            font-size: small;
+            margin-left: -95px;
+        }
+    
+      }
+
 
 .profileImageContainer {
     width: 200px;

@@ -5,6 +5,19 @@
   min-height: 80vh;
   padding: 20px;
 }
+ .card {
+  width: 40%;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  padding: 5px;
+  margin-left: 180px;
+}
+.bodyCon{
+  margin-top: 100px;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-left: 250px;
+}
 
 .content-wrapper, .form-wrapper, .notification-wrapper, .card {
   background-color: #fff;

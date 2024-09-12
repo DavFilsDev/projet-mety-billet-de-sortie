@@ -5,6 +5,8 @@ import { getFirestore, collection, getDocs, doc, updateDoc, addDoc, deleteDoc, T
 import '../styles/Gardien.css';
 import '../styles/BodyGardien.css';
 
+
+
 const ListeEtudiantsSortis = ({ selectedMenu }) => {
     const navigate = useNavigate();
     const auth = getAuth();
@@ -243,7 +245,8 @@ const ListeEtudiantsSortis = ({ selectedMenu }) => {
             break;
             case 'notifications': 
             content = (
-                <div className='bodyCon'>
+                <div className='bodyContient'>
+                    <h2>Pas de notification reçu pour l'instant</h2>
                     
                 </div>
             );
@@ -252,14 +255,14 @@ const ListeEtudiantsSortis = ({ selectedMenu }) => {
 
             case 'user':
                 content = (
-                    <div className='bodyCont'>
+                    <div className='bodyCont1'>
                         
-                        <div className='card'>
+                        <div className='carde2'>
                             <div className='profileImageContainer'>
-                                <img src=""  alt="Photo" className='profileImg'/>
+                                <img src="https://media.licdn.com/dms/image/v2/D4E03AQEMcBLjN5X_RQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1720458087292?e=1731542400&v=beta&t=BwogQqVejfaUQ-hkGCJ_xx5wQvUzUYILhH-1U0tU8AM"  alt="Photo" className='profileImg'/>
                             </div>
-                            <div className='profileName'>Fano</div>
-                            <div className='profileTitle'>Responsable de la vie des étudiants</div>
+                            <div className='profileName'>Valisoa</div>
+                            <div className='profileTitle'>Securité de la vie internat</div>
                         </div>
                     </div>
                 );
@@ -268,7 +271,7 @@ const ListeEtudiantsSortis = ({ selectedMenu }) => {
             content = (
                     <div className='content'>
                         <div className='carde'>
-                            <img src="" alt="Admin" className='profileImg' />
+                            <img src="https://media.licdn.com/dms/image/v2/D4E03AQEMcBLjN5X_RQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1720458087292?e=1731542400&v=beta&t=BwogQqVejfaUQ-hkGCJ_xx5wQvUzUYILhH-1U0tU8AM" alt="Admin" className='profileImg2' />
                             <div className='buttons'>
                             <button onClick={handleLogout} className='logoutButton'>Se déconnecter</button>
                                 <button className='cancelbtn'>Annuler</button>

@@ -28,6 +28,14 @@
     width: 100px;
     height:100px;
 }
+.bodyContient h2 {
+    text-align: center;
+    font-size: 25px;
+    color: #333;
+    margin-top: 250px;
+    margin-left: 300px;
+
+}
 .bodyContent1{
     display:flex;
     justify-content: center;
@@ -133,10 +141,25 @@
     width: 100%;
 }
 @media (max-width: 360px) {
+    .bodyCont1{
+        width: 20%;
+        height: 20%;
+        text-transform: lowercase;
+        margin-top: 25px;
+        margin-left: -280px;
+
+    }
     .bodyCon1 {
         width: 20%;
         height: 20%;
         text-transform: lowercase;
+    }
+    .card {
+        width: 40%;
+        background-color: #FFFFFF;
+        border-radius: 10px;
+        padding: 5px;
+        margin-left:-10px;
     }
     .titre2{
         font-size: 12px;
@@ -169,6 +192,23 @@
   }
 /*setting*/
 @media (max-width: 360px) {
+    .carde{
+        width: 40%;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: none;
+        padding: 20px;
+        max-width: 300px;
+        text-align: center;
+        margin-left: -180px;
+        margin-top: 20px;
+    }
+    .profileImg2 {
+        width: 20%;
+        height: 20%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
    .bodyCo{
     margin-left: -100px;
     margin-top:-18px;
@@ -230,7 +270,7 @@
     font-size: small;
 }
 
-.card {
+.carde {
     width: 300px;
     background-color: #FFFFFF;
     border-radius: 10px;
@@ -238,7 +278,8 @@
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
-    margin-left:5px;
+    margin-left:300px;
+    margin-top: 100px;
 }
 
 .profileImageContainer {
@@ -249,10 +290,11 @@
     margin: 0 auto 10px auto;
     border: 2px solid #3FB9D7;
 }
-.profileImg {
-    width: 100%;
-    height: 100%;
+.profileImg2 {
+    width: 60%;
+    height: 60%;
     object-fit: cover;
+    border-radius: 50%;
 }
 .profileName {
     font-size: 20px;
@@ -360,14 +402,24 @@
     padding-bottom: 5px;
     transition: color 0.3s ease, border-bottom 0.3s ease;
 }
-<<<<<<< HEAD
+ 
+ 
 .active{
     color: #FF9933;
     border-bottom: 2px solid #FF9933;
 }
-=======
+ 
+ 
+.bodyCont1{
+    margin-left:320px;
+    margin-top:130px;
+    width:75%;
+    height:20%;
+}
 
->>>>>>> 3e78e4fa3be1267eeb78c1aa3a04898288adb3fb
+ 
+
+ 
 .notificationList {
     max-width: 250px;
     overflow-y: auto;

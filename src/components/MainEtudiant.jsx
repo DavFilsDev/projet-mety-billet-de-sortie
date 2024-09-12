@@ -5,6 +5,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { db, auth } from '../config/firebase-config'; // Importez les objets db et auth
 import { collection, onSnapshot, doc, getDoc } from 'firebase/firestore';
+import'../styles/MainEtudiant.css';
 
 const MainEtudiant = ({ selectedMenu }) => {
     const navigate = useNavigate();
@@ -108,6 +109,7 @@ const MainEtudiant = ({ selectedMenu }) => {
 
         case 'notifications':
             content = (
+              
                 <div style={styles.bodyCon}>
                     <div style={styles.notificationContainer}>
                         <div style={styles.notificationHeader}>
@@ -141,24 +143,21 @@ const MainEtudiant = ({ selectedMenu }) => {
                         </div>
                     </div>
                 </div>
+            
             );
             break;
 
         case 'user':
             content = (
-                <div style={styles.bodyCon}>
-                    <div style={styles.card}>
-                        <div style={styles.profileImageContainer}>
-                        <img 
-                            src={userProfile?.photoURL || "https://via.placeholder.com/150"} 
-                            alt="Photo de Profil" 
-                            style={styles.profileImage} 
-                        />
+                <div className='bodyCon'>
+                        <div className='carde'>
+                            <div className='profileImageContainer'>
+                                <img src="https://lh3.googleusercontent.com/a/ACg8ocL9iK0v191mdGS8lNqCAbUvhcb1YRtePDaQutfjsBEJ5iMv8xOO=s288-c-no"  alt="Photo" className='profileImg'/>
+                            </div>
+                            <div className='profileName'>Anastabreney</div>
+                            <div className='profileTitle'>Etudiant du Passerelles Numériques</div>
                         </div>
-                        <div style={styles.profileName}>{userProfile?.displayName || 'Nom Non Disponible'}</div>
-                        <div style={styles.profileTitle}>Etudiant Passerelles Numériques</div>
                     </div>
-                </div>
             );
             break;
 
@@ -166,7 +165,7 @@ const MainEtudiant = ({ selectedMenu }) => {
             content = (
                 <div style={styles.bodyCon}>
                     <div style={styles.carde}>
-                        <img src="" alt="Etudiant" style={styles.profileImg} />
+                        <img src="https://lh3.googleusercontent.com/a/ACg8ocL9iK0v191mdGS8lNqCAbUvhcb1YRtePDaQutfjsBEJ5iMv8xOO=s288-c-no" alt="Etudiant" style={styles.profileImg1} />
                         <div style={styles.buttons}>
                             <button style={styles.logoutButton} onClick={handleLogout}>Se déconnecter</button>
                             <button style={styles.cancelbtn}>Annuler</button>
@@ -325,10 +324,11 @@ const styles =  {
         margin: '0 auto 10px',
         border: '2px solid #3FB9D7',
     },
-    profileImg: {
+    profileImg1: {
         width: '100%',
         height: '100%',
         objectFit: 'cover',
+        borderRadius: '50%',
     },
     profileName: {
         fontSize: '20px',
@@ -556,6 +556,8 @@ const styles =  {
         width: '100%',
         height: '100%',
         objectFit: 'cover',
+        border:'2px',
+        borderRadius: '50%',
     },
     profileName: {
         fontSize: '20px',
