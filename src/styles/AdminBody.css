@@ -162,11 +162,11 @@
     margin-left:5px;
 }
 .titre5 {
-        font-size: 100%;
+        font-size: 20px;
         width:400px;
         color: #000000;
         margin-left: 50px;
-        text-decoration: underline 10px #FF9933;
+        text-decoration: underline 3px #FF9933;
         font-weight: bold;
     }
     @media (max-width: 360px) {

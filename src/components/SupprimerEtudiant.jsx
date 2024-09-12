@@ -15,7 +15,7 @@ function SupprimerEtudiant() {
       const students = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
       setEtudiants(students.sort((a, b) => a.Identifiant - b.Identifiant));
     };
-    
+
     fetchEtudiants();
   }, []);
 
@@ -34,45 +34,49 @@ function SupprimerEtudiant() {
   return (
     <>
       <NavLink to="/Connections/AdminHome">
-        <button className="back-btn5"> Retour </button>
+        <button className="back-btn5">Retour</button>
       </NavLink>
       <div className="container">
         <h2>Liste des étudiants</h2>
         {etudiants.length === 0 ? (
           <p>Aucun étudiant trouvé.</p>
         ) : (
-          <table>
-            <thead>
-              <tr>
-                <th>Identifiant</th>
-                <th>Email</th>
-                <th>Téléphone</th>
-                <th>Nom</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {etudiants.map(student => (
-                <tr key={student.id}>
-                  <td>{student.identifiant}</td>
-                  <td>{student.email}</td>
-                  <td>{student.tel}</td>
-                  <td>{student.nomEleve}</td>
-                  <td>
-                    <button
-                      className="delete-button"
-                      onClick={() => {
-                        setStudentToDelete(student.id);
-                        setShowConfirm(true);
-                      }}
-                    >
-                      Supprimer
-                    </button>
-                  </td>
+          // Envelopper le tableau dans un div pour le scroll horizontal
+          <div className="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Identifiant</th>
+                  <th>Email</th>
+                  <th>Téléphone</th>
+                  <th>Nom</th>
+                  <th>Actions</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {etudiants.map(student => (
+                  <tr key={student.id}>
+                    {/* Ajouter des data-label pour les écrans mobiles */}
+                    <td data-label="Identifiant">{student.identifiant}</td>
+                    <td data-label="Email">{student.email}</td>
+                    <td data-label="Téléphone">{student.tel}</td>
+                    <td data-label="Nom">{student.nomEleve}</td>
+                    <td data-label="Actions">
+                      <button
+                        className="delete-button"
+                        onClick={() => {
+                          setStudentToDelete(student.id);
+                          setShowConfirm(true);
+                        }}
+                      >
+                        Supprimer
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         )}
         {showConfirm && (
           <div className="confirm-dialog">

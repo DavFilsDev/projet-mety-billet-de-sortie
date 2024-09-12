@@ -1,61 +1,68 @@
 /* Styles pour le conteneur principal */
 .container {
-  background-color: #f9fafb; /* Couleur claire et moderne pour le fond */
+  background-color: #f9fafb;
   padding: 30px;
-  border-radius: 20px; /* Bordures plus douces et modernes */
+  border-radius: 20px;
   width: 90%;
-  max-width: 1200px; /* Ajustement pour les grands écrans */
+  max-width: 1200px; /* Ajustement pour grands écrans */
   margin: 40px auto;
-  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1); /* Ombre plus douce */
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
-/* Bouton retour */
-.back-btn2 {
-  margin-left: 20px;
-  color: #1d3557; /* Couleur bleu foncé pour le texte */
-  font-size: 16px;
-  font-weight: bold;
+/* Nouveau conteneur pour permettre le scroll horizontal du tableau */
+.table-wrapper {
+  overflow-x: auto; /* Activation du défilement horizontal */
+  width: 100%; /* Assurez-vous que le tableau prend 100% de l'espace parent */
   margin-bottom: 20px;
-  text-decoration: none; /* Pas de lien souligné */
-  width: auto;
-  padding: 10px 20px;
-  background-color: #e87c33; /* Couleur d'accent */
-  border-radius: 8px; /* Bordures arrondies */
-  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.back-btn2:hover {
-  background-color: #d2691e; /* Effet au survol */
-  transform: scale(1.05); /* Légère animation */
+/* Bouton retour */
+.back-btn5 {
+  width: 100px;
+  border-radius: 5px;
+  background-color: #00bfa6;
+  font-size: small;
+  color: black;
+  text-decoration: underline #00bfa6;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.back-btn5:hover {
+  background-color: #cc6600;
+  color: #333333;
+  text-decoration: underline #cc6600;
+  transition: 0.3s ease;
+  cursor: pointer;
 }
 
 h2 {
   text-align: center;
-  color: #333333; /* Couleur plus douce pour un meilleur contraste */
+  color: #333333;
   margin-bottom: 30px;
-  font-family: 'Poppins', sans-serif; /* Police moderne et lisible */
-  font-size: 26px; /* Taille de police pour une meilleure lisibilité */
+  font-family: 'Poppins', sans-serif;
+  font-size: 26px;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 20px;
 }
 
-table th, table td {
-  padding: 18px; /* Plus d'espace pour un design plus aéré */
-  border: 1px solid #e0e0e0; /* Bordures plus douces */
+table th,
+table td {
+  padding: 18px;
+  border: 1px solid #e0e0e0;
   text-align: center;
-  font-family: 'Roboto', sans-serif; /* Police moderne */
+  font-family: 'Roboto', sans-serif;
 }
 
 table th {
-  background-color: #00bfa6; /* Couleur d'accent plus moderne */
+  background-color: #00bfa6;
   color: #ffffff;
   font-size: 18px;
-  text-transform: uppercase; /* Style de texte en majuscule */
+  text-transform: uppercase;
 }
 
 table td {
@@ -63,37 +70,29 @@ table td {
   font-size: 16px;
 }
 
+/* Styles pour les boutons */
 button {
-  padding: 14px 25px; /* Boutons plus spacieux */
+  padding: 14px 25px;
   border: none;
-  border-radius: 10px; /* Bordures plus douces */
+  border-radius: 10px;
   cursor: pointer;
   margin: 10px 5px;
-  font-family: 'Poppins', sans-serif; /* Police lisible */
-  font-size: 16px; /* Taille de police pour les boutons */
-  transition: all 0.3s ease; /* Transition fluide */
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  transform: scale(1.05); /* Agrandissement léger au survol */
-}
-
-.info-button {
-  background-color: #42a5f5; /* Couleur vive et moderne pour le bouton Info */
-  color: #ffffff;
-}
-
-.info-button:hover {
-  background-color: #1e88e5; /* Effet au survol */
+  transform: scale(1.05);
 }
 
 .delete-button {
-  background-color: #ef5350; /* Rouge vif pour le bouton Supprimer */
+  background-color: #ef5350;
   color: #ffffff;
 }
 
 .delete-button:hover {
-  background-color: #e53935; /* Effet au survol */
+  background-color: #e53935;
 }
 
 /* Boîte de dialogue de confirmation */
@@ -101,22 +100,23 @@ button:hover {
   background-color: #ffffff;
   padding: 40px;
   border-radius: 20px;
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2); /* Ombre plus douce */
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1000;
   text-align: center;
-  max-width: 400px; /* Ajustement pour mobile */
+  max-width: 400px;
 }
 
 .confirm-dialog p {
   margin-bottom: 30px;
-  font-size: 20px; /* Texte plus grand et lisible */
+  font-size: 20px;
   color: #333333;
 }
 
+/* Styles pour les boutons de confirmation et d'annulation */
 .confirm-button {
   background-color: #1abc9c;
   color: #ffffff;
@@ -135,65 +135,52 @@ button:hover {
 .cancel-button:hover {
   background-color: #d35400;
 }
-.back-btn5{
-  width: 100px;
-  border-radius: 5px;
-  background-color: #00bfa6;
-  font-size:small;
-  color: black;
-  text-decoration: underline #00bfa6 ;
-  transition: 0.3s ease;
-  cursor: pointer;
-  
-}
-.back-btn5:hover{
-  background-color:#CC6600;
-  color: #333333;
-  text-decoration: underline#CC6600;
-  transition: 0.3s ease;
-  cursor: pointer;
-}
 
 /* Media Queries pour une meilleure adaptation */
-@media (max-width: 40%) {
+@media (max-width: 768px) {
   .container {
     padding: 20px;
-    width: 40%;
+    width: 95%;
   }
 
   h2 {
-    font-size: 16px;
+    font-size: 20px;
   }
 
-  table th, table td {
+  table th,
+  table td {
     padding: 12px;
-    font-size: 12px;
+    font-size: 14px;
   }
 
   button {
     padding: 10px 15px;
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .confirm-dialog {
     padding: 20px;
+    max-width: 300px;
   }
 
   .confirm-dialog p {
-    font-size: 12px;
-  }
-  .back-btn5:hover{
-    background-color:#CC6600;
-    color: #333333;
-    text-decoration: underline#CC6600;
-    transition: 0.3s ease;
-    cursor: pointer;
-
+    font-size: 16px;
   }
 }
 
 @media (max-width: 480px) {
+  .container {
+    padding: 15px;
+    width: 100%;
+  }
+
   h2 {
+    font-size: 18px;
+  }
+
+  table th,
+  table td {
+    padding: 8px;
     font-size: 12px;
   }
 
@@ -202,15 +189,11 @@ button:hover {
     font-size: 12px;
   }
 
+  .confirm-dialog {
+    padding: 10px;
+  }
+
   .confirm-dialog p {
     font-size: 12px;
-  }
-  .back-btn5:hover{
-    background-color:#CC6600;
-    color: #333333;
-    text-decoration: underline#CC6600;
-    transition: 0.3s ease;
-    cursor: pointer;
-
   }
 }
